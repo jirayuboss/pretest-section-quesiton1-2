@@ -3,11 +3,17 @@ import { Component } from 'react';
 
 //import material ui
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
+
+//react-router-dom
+import {
+  Link
+} from "react-router-dom";
 
 class Question1 extends Component {
   constructor() {
@@ -90,6 +96,16 @@ class Question1 extends Component {
         </Grid>
         <Grid item xs style={{ width: '300px', maxWidth: '300px', borderRight: '1px solid black' }}>
           {this.state.selectedChoice === 'isPrime' ? this.checkPrimeNumber(this.state.inputNum) + '' : this.checkFibonacciNumber(this.state.inputNum) + ''}
+        </Grid>
+        <Grid align='center' item xs={12} style={{ marginTop: '100px' }}>
+          <Link
+            to="/"
+            color="inherit"
+            underline="none"
+            style={{ textDecoration: 'none', color: '#565656' }}
+          >
+            <Button variant="contained">Home</Button>
+          </Link>
         </Grid>
       </Grid>
     )
